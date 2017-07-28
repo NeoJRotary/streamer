@@ -25,24 +25,24 @@ type Streamer struct {
 - NoRouter : Router Not Found Code. Default is 98.
 - InvalidBody : Invalid Data Body Code. Default is 95.
    
-**func (s \*Streamer) SetRouter(key string, body []string, call func(map[string]interface{}) (int, map[string]interface{}))**   
+**func (\*Streamer) SetRouter(key string, body []string, call func(map[string]interface{}) (int, map[string]interface{}))**   
 Set Router.
 - key : name of the router.
 - body : data body key list for validation.
 - call : function to excute after body validation is passed.
    
-**func (s \*Streamer) Serve(srv string, middleware func(\*stream.Request, \*stream.Src, []byte) bool) error**   
+**func (\*Streamer) Serve(srv string, middleware func(\*stream.Request, \*stream.Src, []byte) bool) error**   
 Start listening host.
 - srv : service name. Which you set in `Streamer.Services`.
 - middleware : function to excute before routing. Set `nil` if you dont need it. Middleware should return boolean for skipping route or not.
    
-**func (s \*Streamer) PING() bool**   
+**func (\*Streamer) PING() bool**   
 Do PING to test listener is working or not. If it get error from listener it will return `false`.
    
-**func (s \*Streamer) IsErr(err error)**   
+**func (\*Streamer) IsErr(err error)**   
 Check error is `nil` or not. If is, it will do `panic(err)`. Router will recover the panic and response error code to client.
    
-**func (s \*Streamer) Close()**   
+**func (\*Streamer) Close()**   
 Close Listner.
     
     
