@@ -4,7 +4,7 @@
 Support Routing and Req/Res Handler for StreamUDP.
 
 ## Methods
-**func GetStream() (\*Streamer, error)**  
+**func GetStreamer() (\*Streamer, error)**  
 Return `*Streamer` struct. 
 ```
 type Streamer struct {
